@@ -106,283 +106,238 @@ class _sesiState extends State<sesi> {
                           child: Bienvenida2(),
                         ),
                         Container(
-                          width: 140 * fem,
+                          width: 147 * fem,
                           height: 145 * fem,
                           child: Column(
                             children: [
-                              Positioned(
-                                child: Align(
-                                  child: Padding(
-                                    padding: EdgeInsets.only(top: 15 * fem),
-                                    child: SizedBox(
-                                      width: 80 * fem,
-                                      height: 30 * fem,
-                                      child: Image.asset(
-                                        'img/desktop/letainicio.png',
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Positioned(
-                                child: Padding(
-                                  padding: EdgeInsets.only(top: 6 * fem),
-                                  child: Container(
-                                    width: 95 * fem,
-                                    height: 40 * fem,
-                                    child: Column(
-                                      children: [
-                                        Stack(
-                                          children: [
-                                            Positioned(
-                                              top: 2 * fem,
-                                              left: 1.3 * fem,
-                                              child: Align(
-                                                child: SizedBox(
-                                                  width: 16 * fem,
-                                                  height: 5 * fem,
-                                                  child: Text(
-                                                    'CORREO',
-                                                    textAlign: TextAlign.center,
-                                                    style: SafeGoogleFont(
-                                                      'Alice',
-                                                      fontSize: 3 * ffem,
-                                                      fontWeight:
-                                                      FontWeight.w400,
-                                                      letterSpacing: 0.4 * fem,
-                                                      color: Color(0x63000000),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                            Positioned(
-                                              child: Align(
-                                                child: Padding(
-                                                  padding: EdgeInsets.only(
-                                                      top: 7 * fem),
-                                                  child: SizedBox(
-                                                    width: 90 * fem,
-                                                    height: 10 * fem,
-                                                    child: Container(
-                                                      decoration: BoxDecoration(
-                                                        borderRadius:
-                                                        BorderRadius
-                                                            .circular(
-                                                            2 * fem),
-                                                        //  color: Color(0x82d9d9d9),
-                                                      ),
-                                                      child: usuario(),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                            Positioned(
-                                              child: Align(
-                                                child: Padding(
-                                                  padding: EdgeInsets.only(
-                                                      top: 22 * fem,
-                                                      right: 67 * fem),
-                                                  child: SizedBox(
-                                                    width: 25 * fem,
-                                                    height: 5 * fem,
-                                                    child: Text(
-                                                      'CONTRASEÑA',
-                                                      textAlign:
-                                                      TextAlign.center,
-                                                      style: SafeGoogleFont(
-                                                        'Alice',
-                                                        fontSize: 3 * ffem,
-                                                        fontWeight:
-                                                        FontWeight.w400,
-                                                        letterSpacing:
-                                                        0.4 * fem,
-                                                        color:
-                                                        Color(0x63000000),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                            Positioned(
-                                              child: Align(
-                                                child: Padding(
-                                                  padding: EdgeInsets.only(
-                                                      top: 24 * fem),
-                                                  child: SizedBox(
-                                                    width: 90 * fem,
-                                                    height: 10 * fem,
-                                                    child: Container(
-                                                      decoration: BoxDecoration(
-                                                        borderRadius:
-                                                        BorderRadius
-                                                            .circular(
-                                                            2 * fem),
-                                                        //  color: Color(0x82d9d9d9),
-                                                      ),
-                                                      child: contra(),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Positioned(
-                                child: Padding(
-                                  padding: EdgeInsets.only(top: 6 * fem),
-                                  child: MouseRegion(
-                                    cursor: SystemMouseCursors.click,
-                                    child: TextButton(
-                                      onPressed: () async {
-                                        try {
-                                          await Auth().signInWithEmailAndPassword(
-                                            email: correocontroller.text,
-                                            password: contrasenacontroller.text,
-                                          );
-                                          Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    home_desk()),
-                                          );
-                                        } catch (error) {
-                                          print(
-                                              'Error al iniciar sesión: $error');
-                                          // Puedes mostrar un mensaje de error al usuario si lo deseas
-                                        }
-                                      },
-                                      child: Container(
-                                        width: 50 * fem,
-                                        height: 10 * fem,
-                                        decoration: BoxDecoration(
-                                          color: _buttonColor,
-                                          borderRadius:
-                                          BorderRadius.circular(20 * fem),
-                                          boxShadow: [
-                                            BoxShadow(
-                                              color: Color(0x3f000000),
-                                              offset: Offset(0 * fem, 4 * fem),
-                                              blurRadius: 2 * fem,
-                                            ),
-                                          ],
-                                        ),
-                                        child: Row(
-                                          crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                          children: [
-                                            Container(
-                                              margin: EdgeInsets.only(
-                                                  left: 5 * fem,
-                                                  right: 3.5 * fem),
-                                              width: 3 * fem,
-                                              height: 3 * fem,
-                                              child: Image.asset(
-                                                'img/mobil/icono.png',
-                                              ),
-                                            ),
-                                            Container(
-                                              child: Text(
-                                                'INICIAR SESION',
-                                                textAlign: TextAlign.center,
-                                                style: SafeGoogleFont(
-                                                  'Alice',
-                                                  fontSize: 3 * ffem,
-                                                  fontWeight: FontWeight.w400,
-                                                  letterSpacing: 0.26 * fem,
-                                                  color: Color(0xff000000),
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                    onEnter: (_) {
-                                      setState(() {
-                                        _buttonColor = Color(0xa062a191); // Cambia este color al deseado
-                                      });
-                                    },
-                                    onExit: (_) {
-                                      setState(() {
-                                        _buttonColor = Color(0xfff5c7c6);
-                                      });
-                                    },
+                              Container(
+                                margin: EdgeInsets.only(top: 15 * fem),
+                                child: SizedBox(
+                                  width: 80 * fem,
+                                  height: 30 * fem,
+                                  child: Image.asset(
+                                    'img/desktop/letainicio.png',
+                                    fit: BoxFit.cover,
                                   ),
                                 ),
                               ),
                               Container(
                                 width: 100 * fem,
+                                height: 70 * fem,
+                                margin: EdgeInsets.only(top: 4 * fem),
+                                child: Column(
+                                  children: [
+                                    Container(
+                                      margin: EdgeInsets.only(
+                                        top: 2 * fem,
+                                        right: 75 * fem,
+                                      ),
+                                      child: SizedBox(
+                                        width: 15 * fem,
+                                        height: 3 * fem,
+                                        child: Text(
+                                          'CORREO',
+                                          textAlign: TextAlign.center,
+                                          style: SafeGoogleFont(
+                                            'Alice',
+                                            fontSize: 3 * ffem,
+                                            fontWeight: FontWeight.w400,
+                                            letterSpacing: 0.4 * fem,
+                                            color: Color(0x63000000),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: EdgeInsets.only(top: 2 * fem),
+                                      child: SizedBox(
+                                        width: 90 * fem,
+                                        height: 7 * fem,
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                            BorderRadius.circular(
+                                                2 * fem),
+                                            //  color: Color(0x82d9d9d9),
+                                          ),
+                                          child: usuario(),
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: EdgeInsets.only(
+                                          top: 12 * fem, right: 67 * fem),
+                                      child: SizedBox(
+                                        width: 25 * fem,
+                                        height: 3 * fem,
+                                        child: Text(
+                                          'CONTRASEÑA',
+                                          textAlign: TextAlign.center,
+                                          style: SafeGoogleFont(
+                                            'Alice',
+                                            fontSize: 3 * ffem,
+                                            fontWeight: FontWeight.w400,
+                                            letterSpacing: 0.4 * fem,
+                                            color: Color(0x63000000),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: EdgeInsets.only(top: 2 * fem),
+                                      child: SizedBox(
+                                        width: 90 * fem,
+                                        height: 7 * fem,
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                            BorderRadius.circular(
+                                                2 * fem),
+                                            //  color: Color(0x82d9d9d9),
+                                          ),
+                                          child: contra(),
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: EdgeInsets.only(top: 13 * fem),
+                                      child: MouseRegion(
+                                        cursor: SystemMouseCursors.click,
+                                        child: TextButton(
+                                          onPressed: () async {
+                                            try {
+                                              await Auth().signInWithEmailAndPassword(
+                                                email: correocontroller.text,
+                                                password: contrasenacontroller.text,
+                                              );
+                                              Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        home_desk()),
+                                              );
+                                            } catch (error) {
+                                              print(
+                                                  'Error al iniciar sesión: $error');
+                                              // Puedes mostrar un mensaje de error al usuario si lo deseas
+                                            }
+                                          },
+                                          child: Container(
+                                            width: 50 * fem,
+                                            height: 10 * fem,
+                                            decoration: BoxDecoration(
+                                              color: _buttonColor,
+                                              borderRadius:
+                                              BorderRadius.circular(20 * fem),
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color: Color(0x3f000000),
+                                                  offset: Offset(0 * fem, 4 * fem),
+                                                  blurRadius: 2 * fem,
+                                                ),
+                                              ],
+                                            ),
+                                            child: Row(
+                                              crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                              children: [
+                                                Container(
+                                                  margin: EdgeInsets.only(
+                                                      left: 5 * fem,
+                                                      right: 3.5 * fem),
+                                                  width: 3 * fem,
+                                                  height: 3 * fem,
+                                                  child: Image.asset(
+                                                    'img/mobil/icono.png',
+                                                  ),
+                                                ),
+                                                Container(
+                                                  child: Text(
+                                                    'INICIAR SESION',
+                                                    textAlign: TextAlign.center,
+                                                    style: SafeGoogleFont(
+                                                      'Alice',
+                                                      fontSize: 3 * ffem,
+                                                      fontWeight: FontWeight.w400,
+                                                      letterSpacing: 0.26 * fem,
+                                                      color: Color(0xff000000),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                        onEnter: (_) {
+                                          setState(() {
+                                            _buttonColor = Color(
+                                                0xa062a191); // Cambia este color al deseado
+                                          });
+                                        },
+                                        onExit: (_) {
+                                          setState(() {
+                                            _buttonColor = Color(0xfff5c7c6);
+                                          });
+                                        },
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                width: 100 * fem,
                                 height: 5 * fem,
-                                margin: EdgeInsets.only(top: 25 * fem),
+                                margin: EdgeInsets.only(top: 10 * fem),
                                 child: Row(
                                   children: [
-                                    Positioned(
-                                      child: Align(
-                                        child: Padding(
-                                          padding:
-                                          EdgeInsets.only(left: 17 * fem),
-                                          child: SizedBox(
-                                            width: 32 * fem,
-                                            height: 5 * fem,
-                                            child: InkWell(
-                                              onTap: () {
-                                                Navigator.push(
-                                                    context,
-                                                    MaterialPageRoute(
-                                                        builder: (context) =>
-                                                            regis_desk()));
-                                              },
-                                              child: Text(
-                                                'NO TENGO UNA CUENTA !',
-                                                textAlign: TextAlign.center,
-                                                style: SafeGoogleFont(
-                                                  'Almarai',
-                                                  fontSize: 2 * ffem,
-                                                  fontWeight: FontWeight.w700,
-                                                  letterSpacing: 0.3 * fem,
-                                                  color: Color(0xffea96a0),
-                                                ),
-                                              ),
+                                    Container(
+                                      margin: EdgeInsets.only(left: 17 * fem),
+                                      child: SizedBox(
+                                        width: 32 * fem,
+                                        height: 5 * fem,
+                                        child: InkWell(
+                                          onTap: () {
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        regis_desk()));
+                                          },
+                                          child: Text(
+                                            'NO TENGO UNA CUENTA !',
+                                            textAlign: TextAlign.center,
+                                            style: SafeGoogleFont(
+                                              'Almarai',
+                                              fontSize: 2 * ffem,
+                                              fontWeight: FontWeight.w700,
+                                              letterSpacing: 0.3 * fem,
+                                              color: Color(0xffea96a0),
                                             ),
                                           ),
                                         ),
                                       ),
                                     ),
-                                    Positioned(
-                                      child: Align(
-                                        child: Padding(
-                                          padding:
-                                          EdgeInsets.only(left: 15 * fem),
-                                          child: SizedBox(
-                                            width: 17 * fem,
-                                            height: 5 * fem,
-                                            child: InkWell(
-                                              onTap: () {
-                                                // Navigator.push(
-                                                //     context,
-                                                //     MaterialPageRoute(
-                                                //       builder: (context) => regis_desk()));
-                                              },
-                                              child: Text(
-                                                'NOSOTROS',
-                                                textAlign: TextAlign.center,
-                                                style: SafeGoogleFont(
-                                                  'Almarai',
-                                                  fontSize: 2 * ffem,
-                                                  fontWeight: FontWeight.w700,
-                                                  letterSpacing: 0.3 * fem,
-                                                  color: Color(0xffea96a0),
-                                                ),
-                                              ),
+                                    Container(
+                                      margin: EdgeInsets.only(left: 15 * fem),
+                                      child: SizedBox(
+                                        width: 17 * fem,
+                                        height: 5 * fem,
+                                        child: InkWell(
+                                          onTap: () {
+                                            // Navigator.push(
+                                            //     context,
+                                            //     MaterialPageRoute(
+                                            //       builder: (context) => regis_desk()));
+                                          },
+                                          child: Text(
+                                            'NOSOTROS',
+                                            textAlign: TextAlign.center,
+                                            style: SafeGoogleFont(
+                                              'Almarai',
+                                              fontSize: 2 * ffem,
+                                              fontWeight: FontWeight.w700,
+                                              letterSpacing: 0.3 * fem,
+                                              color: Color(0xffea96a0),
                                             ),
                                           ),
                                         ),
@@ -391,18 +346,14 @@ class _sesiState extends State<sesi> {
                                   ],
                                 ),
                               ),
-                              Padding(
-                                padding: EdgeInsets.only(top: 0 * fem),
-                                child: Positioned(
-                                  child: Align(
-                                    child: SizedBox(
-                                      width: 150 * fem,
-                                      height: 0.4 * fem,
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                          color: Color(0x54eebbbb),
-                                        ),
-                                      ),
+                              Container(
+                                margin: EdgeInsets.only(top: 0 * fem),
+                                child: SizedBox(
+                                  width: 150 * fem,
+                                  height: 0.4 * fem,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      color: Color(0x54eebbbb),
                                     ),
                                   ),
                                 ),
@@ -422,7 +373,7 @@ class _sesiState extends State<sesi> {
     );
   }
 
-  Container usuario(){
+  Container usuario() {
     return Container(
       height: 60,
       child: TextFormField(
